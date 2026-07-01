@@ -1,8 +1,12 @@
 
-const HomePage = () => {
-  return (
-    <div></div>
-  )
-}
+import Hero from "@/features/homePage/Hero";
 
-export default HomePage
+const HomePage = () => {
+    return (
+        <>
+            <Hero />
+        </>
+    );
+};
+
+export default HomePage;
