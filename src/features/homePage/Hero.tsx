@@ -1,4 +1,4 @@
-import React from "react";
+
 import Link from "next/link";
 
 const Hero = () => {
@@ -9,7 +9,6 @@ const Hero = () => {
 
             <div className="container max-w-screen-2xl mx-auto px-2">
                 <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8 items-center">
-                    {/* Text Content */}
                     <div className="flex flex-col justify-center text-center lg:text-left lg:col-span-6">
                         <span className="text-xs font-semibold tracking-widest text-purple-600 uppercase mb-4">
                             Clean • Vegan • Cruelty-Free
@@ -42,7 +41,6 @@ const Hero = () => {
                             </Link>
                         </div>
 
-                        {/* Quick Trust Badges */}
                         <div className="mt-12 grid grid-cols-3 gap-4 border-t border-neutral-200/60 pt-8 max-w-md mx-auto lg:mx-0">
                             <div>
                                 <p className="text-xl font-serif text-neutral-900">
@@ -71,10 +69,8 @@ const Hero = () => {
                         </div>
                     </div>
 
-                    {/* Visual Showcase Block */}
                     <div className="relative lg:col-span-6 flex justify-center">
                         <div className="relative w-full max-w-md sm:max-w-lg aspect-4/5 rounded-[2rem] overflow-hidden bg-neutral-200 shadow-xl">
-                            {/* Replace src with your actual image path */}
                             <img
                                 src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1000&auto=format&fit=crop"
                                 alt="Ethereal beauty product setting"
@@ -82,7 +78,6 @@ const Hero = () => {
                             />
                         </div>
 
-                        {/* Overlay Decorative Tag */}
                         <div className="absolute -bottom-6 -left-6 hidden sm:flex items-center gap-3 bg-white p-4 rounded-2xl shadow-xl border border-neutral-100">
                             <div className="h-10 w-10 rounded-full bg-[#f3e8ee] flex items-center justify-center text-xl">
                                 ✨
