@@ -1,4 +1,5 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { globalErrorHandler } from '@/lib/global-error-handler';
+import { NextRequest } from 'next/server';
 
 
 // api handler type
@@ -11,19 +12,7 @@ export const catchAsync = (handler: TApiHandler) => {
         try {
             return await handler(req, ...args);
         } catch (error: any) {
-
-            let status = error.status || 500;
-            let message = error.message || 'Internal Server Error';
-
-            // send response
-            return NextResponse.json(
-                {
-                    success: false,
-                    status,
-                    error: message,
-                },
-                { status }
-            );
+            return globalErrorHandler(error);
         }
     };
 }

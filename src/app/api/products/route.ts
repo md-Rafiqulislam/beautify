@@ -2,6 +2,7 @@ import { dbConnect } from "@/lib/db-connect-hanlder";
 import { productModel } from "@/models/product.model";
 import { NextRequest, NextResponse } from "next/server";
 import { sendResponse } from "../../../utils/send-response-hanlder";
+import { catchAsync } from "@/utils/catch-async-handler";
 
 
 // create product
@@ -32,7 +33,20 @@ const POST = async (req: NextRequest) => {
 };
 
 
+// get products
+const GET = catchAsync(async (req: NextRequest) => {
+    await dbConnect();
+    const products = await productModel.find();
+    return sendResponse({
+        status: 200,
+        message: "Products retrived successfully.",
+        data: products,
+    });
+});
+
+
 // export methods
 export {
     POST,
+    GET,
 };
