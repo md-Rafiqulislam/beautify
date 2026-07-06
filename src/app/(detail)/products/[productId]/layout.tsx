@@ -1,15 +1,11 @@
 import Footer from "@/components/footer/Footer";
-import Header from "@/features/homePage/Header";
 import { TChildren } from "@/types/child.type";
 
-const HomeLayout = ({ children }: TChildren) => {
+const ProductLayot = ({ children }: TChildren) => {
     return (
         <div className="min-h-dvh flex flex-col">
-            {/* header */}
-            <Header />
-
             {/* main page */}
-            <main>{children}</main>
+            <main className="grow">{children}</main>
 
             {/* footer */}
             <Footer />
@@ -17,4 +13,4 @@ const HomeLayout = ({ children }: TChildren) => {
     );
 };
 
-export default HomeLayout;
+export default ProductLayot;
