@@ -13,7 +13,7 @@ export const ProductsGrid = ({ products }: TProductGridProps) => {
     }
 
     return (
-        <section className="w-full h-full">
+        <section className="w-full h-full bg-linear-to-b from-pink-100 via-violet-200 to-blue-200 py-6">
             <div className="app-container px-2">
                 <div className="grid flex-1 grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     {products.map((product) => (

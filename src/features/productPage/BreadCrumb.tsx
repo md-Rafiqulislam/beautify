@@ -3,9 +3,9 @@ import Link from "next/link";
 
 const BreadCrumb = ({ product }: TProductCardProps) => {
     return (
-        <nav className="w-full h-full">
-            <section className="app-container">
-                <div className="mb-8 flex items-center gap-2 text-xs font-medium text-slate-500">
+        <nav className="w-full h-full py-6">
+            <section className="app-container px-2">
+                <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
                     <Link href="/" className="hover:text-slate-900">
                         Home
                     </Link>

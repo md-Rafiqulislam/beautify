@@ -6,7 +6,7 @@ const ProductCard = ({ product }: TProductCardProps) => {
     const isOutOfStock = product.quantity === 0;
 
     return (
-        <article className="group relative flex h-full flex-col overflow-hidden rounded-tl-4xl rounded-br-4xl bg-slate-100 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gray-200/50 ease-in-out">
+        <article className="group relative flex h-full flex-col overflow-hidden rounded-tl-4xl rounded-br-4xl bg-slate-100 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gray-500/50 ease-in-out">
             {/* picture */}
             <div className="relative aspect-video w-full overflow-hidden">
                 <Image

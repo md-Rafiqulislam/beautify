@@ -1,7 +1,7 @@
 const Banner = () => {
     return (
         <section className="h-full w-full">
-            <section className="relative app-container h-dvh w-full flex justify-center items-center overflow-hidden px-2">
+            <section className="relative h-dvh w-full flex justify-center items-center overflow-hidden px-2">
                 {/* picture */}
                 <img
                     src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=2000"

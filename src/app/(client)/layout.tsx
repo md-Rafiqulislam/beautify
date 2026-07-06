@@ -9,7 +9,7 @@ const ClientLayout = ({ children }: TChildren) => {
             <Header />
 
             {/* main page */}
-            <main>{children}</main>
+            <main className="grow">{children}</main>
 
             {/* footer */}
             <Footer />
