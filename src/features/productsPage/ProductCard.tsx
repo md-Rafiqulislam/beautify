@@ -1,11 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 import { TProductCardProps } from "@/types/product.type";
 
 const ProductCard = ({ product }: TProductCardProps) => {
     const isOutOfStock = product.quantity === 0;
 
     return (
-        <article className="group relative flex h-full flex-col overflow-hidden rounded-tl-4xl rounded-br-4xl bg-slate-50 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gray-200/50 ease-in-out">
+        <article className="group relative flex h-full flex-col overflow-hidden rounded-tl-4xl rounded-br-4xl bg-slate-100 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gray-200/50 ease-in-out">
             {/* picture */}
             <div className="relative aspect-video w-full overflow-hidden">
                 <Image
@@ -49,13 +50,22 @@ const ProductCard = ({ product }: TProductCardProps) => {
                 </div>
 
                 {/* actions */}
-                <div className="mt-6 pt-4">
+                <div className="mt-6 pt-4 flex items-center gap-2">
+                    {/* details button */}
+                    <Link
+                        href={`/products/${product._id}`}
+                        className="flex flex-1 items-center justify-center rounded-2xl border border-gray-200 bg-white py-3.5 text-sm font-bold text-gray-700 transition-all duration-300 hover:bg-gray-50 hover:text-gray-900 hover:border-gray-300 active:scale-[0.95] cursor-pointer text-center"
+                    >
+                        Details
+                    </Link>
+
+                    {/* add to cart button */}
                     <button
                         disabled={isOutOfStock}
-                        className={`relative flex w-full items-center justify-center overflow-hidden rounded-2xl py-3.5 text-sm font-bold transition-all duration-300 active:scale-[0.90] cursor-pointer ${
+                        className={`group/btn relative flex flex-1 items-center justify-center overflow-hidden rounded-2xl py-3.5 text-sm font-bold transition-all duration-300 active:scale-[0.95] ${
                             isOutOfStock
-                                ? "bg-gray-100 text-gray-400 cursor-not-allowed"
-                                : "bg-slate-900 text-slate-50 shadow-md hover:bg-gray-800 hover:shadow-xl hover:shadow-gray-900/20"
+                                ? "bg-gray-100 text-gray-400"
+                                : "bg-slate-900 text-slate-50 shadow-md hover:bg-gray-800 hover:shadow-xl hover:shadow-gray-900/20 cursor-pointer"
                         }`}
                     >
                         <span className="relative z-10 flex items-center gap-2">

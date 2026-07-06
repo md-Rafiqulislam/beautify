@@ -6,7 +6,7 @@ const Banner = () => {
             <section className="container max-w-screen-2xl mx-auto px-2 pt-8">
                 <div className="border-b border-neutral-200 pb-10 mb-2 text-center md:text-left gap-6">
                     <div className="space-y-4">
-                        <nav className="text-sm uppercase tracking-widest text-neutral-400 font-medium">
+                        <nav className="text-xs md:text-sm uppercase tracking-widest text-neutral-400 font-medium">
                             <Link href="/" className="hover:text-neutral-600">
                                 Home
                             </Link>{" "}
@@ -16,7 +16,7 @@ const Banner = () => {
                             The Conscious Collection
                         </h1>
                     </div>
-                    <p className="text-sm font-light text-neutral-500 max-w-sm leading-relaxed mt-4">
+                    <p className="text-sm font-light text-neutral-500 max-w-lg leading-relaxed mt-4">
                         High-performance formulas engineered cleanly, designed
                         intentionally to accentuate your natural, organic skin
                         health.

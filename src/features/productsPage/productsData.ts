@@ -6,7 +6,7 @@ export const mockProducts: TProductWithId[] = [
     {
         _id: 'prod_1',
         title: 'Minimalist Leather Backpack',
-        shortDescription: 'Sleek, water-resistant everyday carry.',
+        shortDescription: 'Sleek, water-resistant everyday carry. Crafted from premium top-grain leather, this minimalist backpack features a padded 15-inch laptop sleeve, ergonomic shoulder straps, and hidden security pockets. Crafted from premium top-grain leather, this minimalist backpack features a padded 15-inch laptop sleeve, ergonomic shoulder straps, and hidden security pockets.',
         description: 'Crafted from premium top-grain leather, this minimalist backpack features a padded 15-inch laptop sleeve, ergonomic shoulder straps, and hidden security pockets.',
         price: 149.00,
         quantity: 0,

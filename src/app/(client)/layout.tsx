@@ -1,10 +1,10 @@
 import Footer from "@/components/footer/Footer";
-import Header from "@/features/homePage/Header";
+import Header from "@/components/Header";
 import { TChildren } from "@/types/child.type";
 
-const HomeLayout = ({ children }: TChildren) => {
+const ClientLayout = ({ children }: TChildren) => {
     return (
-        <div className="min-h-dvh flex flex-col">
+        <div className="flex flex-col min-h-dvh">
             {/* header */}
             <Header />
 
@@ -17,4 +17,4 @@ const HomeLayout = ({ children }: TChildren) => {
     );
 };
 
-export default HomeLayout;
+export default ClientLayout;
