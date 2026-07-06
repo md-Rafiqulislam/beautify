@@ -1,7 +1,7 @@
 const Trending = () => {
     return (
         <section className="w-full h-full py-12 bg-linear-to-b from-sky-100 to-background">
-            <div className="container max-w-screen-2xl mx-auto px-2">
+            <div className="app-container px-2">
                 <h2 className="text-3xl md:text-4xl font-serif text-center mb-16">
                     Trending Essentials
                 </h2>

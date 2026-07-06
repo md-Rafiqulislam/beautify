@@ -5,7 +5,7 @@ import Link from "next/link";
 const Products = () => {
     return (
         <section className="w-full h-full bg-linear-to-b from-background to-sky-200">
-            <section className="py-12 container max-w-screen-2xl mx-auto px-2">
+            <section className="py-12 app-container px-2">
                 <div className="flex justify-between items-end mb-12">
                     <h2 className="text-3xl md:text-4xl font-serif text-gray-900">
                         Curated For You

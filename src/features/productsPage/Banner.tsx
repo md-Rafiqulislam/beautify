@@ -3,7 +3,7 @@ import Link from "next/link";
 const Banner = () => {
     return (
         <header className="w-full h-full">
-            <section className="container max-w-screen-2xl mx-auto px-2 pt-8">
+            <section className="app-container px-2 pt-8">
                 <div className="border-b border-neutral-200 pb-10 mb-2 text-center md:text-left gap-6">
                     <div className="space-y-4">
                         <nav className="text-xs md:text-sm uppercase tracking-widest text-neutral-400 font-medium">
