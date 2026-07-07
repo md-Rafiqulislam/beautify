@@ -27,3 +27,11 @@ export type TBlogCardProps = {
 export type TBlogsGridProps = {
     blogs: TBlogWithId[];
 };
+
+
+// blog page props
+export type TBlogPageProps = {
+    params: Promise<{
+        blogId: string;
+    }>;
+};
