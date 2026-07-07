@@ -1,17 +1,10 @@
 import { TBlogCardProps } from "@/types/blog.type";
+import { formatDate } from "@/utils/format-date-handler";
 import { ArrowUpRight, Calendar, Clock } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 const BlogCard = ({ blog }: TBlogCardProps) => {
-    // format date
-    const formatDate = (dateString: string) => {
-        return new Date(dateString).toLocaleDateString("en-US", {
-            month: "short",
-            day: "numeric",
-            year: "numeric",
-        });
-    };
 
     return (
         <article className="group flex flex-col bg-slate-50 border overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
