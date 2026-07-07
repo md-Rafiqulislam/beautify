@@ -1,0 +1,29 @@
+// blog model
+export type TBlog = {
+    title: string;
+    description: string;
+    content: string;
+    pictures?: string[];
+    isDeleted?: boolean;
+    readTime?: string;
+};
+
+
+// blog with id and timestamps
+export type TBlogWithId = TBlog & {
+    _id: string;
+    createdAt: string;
+    updatedAt: string;
+};
+
+
+// blog card props
+export type TBlogCardProps = {
+    blog: TBlogWithId;
+};
+
+
+// blogs grid props
+export type TBlogsGridProps = {
+    blogs: TBlogWithId[];
+};

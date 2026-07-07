@@ -23,6 +23,12 @@ const Header = () => {
                     >
                         Products
                     </Link>
+                    <Link
+                        className="hover:text-foreground transition-colors"
+                        href="/blogs"
+                    >
+                        Journals
+                    </Link>
                 </nav>
             </section>
         </header>
