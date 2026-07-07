@@ -15,5 +15,18 @@ const POST = catchAsync(async (req) => {
 });
 
 
+// get blogs
+const GET = catchAsync(async (req) => {
+
+    const blogs = await blogModel.find();
+
+    return sendResponse({
+        status: 200,
+        message: "Blogs retrived successfully.",
+        data: blogs,
+    });
+});
+
+
 // export methods
-export { POST };
+export { POST, GET };
