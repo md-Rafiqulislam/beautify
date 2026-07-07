@@ -32,3 +32,9 @@ export type TProductPageProps = {
         productId: string;
     }>;
 };
+
+
+// route params
+export type TRouteParams = {
+    productId: string;
+};

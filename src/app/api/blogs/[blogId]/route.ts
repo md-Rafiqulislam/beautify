@@ -39,7 +39,7 @@ const DELETE = catchAsync<TRouteParams>(async (req, ctx) => {
     const { blogId } = await ctx.params;
     const body = await req.json();
 
-    const blog = await blogModel.findByIdAndUpdate(blogId, { ...body }, { new: true, runValidators: true });
+    const blog = await blogModel.findByIdAndUpdate(blogId, { isDeleted: true }, { new: true, runValidators: true });
 
     return sendResponse({
         status: 200,
