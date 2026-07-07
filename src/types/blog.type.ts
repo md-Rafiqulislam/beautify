@@ -35,3 +35,9 @@ export type TBlogPageProps = {
         blogId: string;
     }>;
 };
+
+
+// route params
+export type TRouteParams = {
+    blogId: string;
+}
