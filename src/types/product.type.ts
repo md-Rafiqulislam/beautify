@@ -11,7 +11,11 @@ export type TProduct = {
 
 
 // product type with id
-export type TProductWithId = TProduct & { _id: string };
+export type TProductWithId = TProduct & {
+    _id: string;
+    createdAt: string;
+    updatedAt: string;
+};
 
 
 // product card props
@@ -21,7 +25,7 @@ export type TProductCardProps = {
 
 
 // product grid props
-export type TProductGridProps = {
+export type TProductsGridProps = {
     products: TProductWithId[];
 };
 

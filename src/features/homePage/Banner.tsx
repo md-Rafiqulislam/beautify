@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Banner = () => {
     return (
         <section className="h-full w-full">
@@ -25,19 +27,25 @@ const Banner = () => {
 
                     {/* actions */}
                     <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-5 w-full">
-                        <button className="group relative w-full sm:w-auto px-8 py-3 md:px-10 md:py-4 bg-background text-foreground overflow-hidden transition-all hover:text-background border border-background">
+                        <Link
+                            href="/products"
+                            className="group relative w-full sm:w-auto px-8 py-3 md:px-10 md:py-4 bg-background text-foreground overflow-hidden transition-all hover:text-background border border-background"
+                        >
                             <span className="relative z-10 text-xs md:text-sm uppercase tracking-widest font-medium whitespace-nowrap">
                                 Discover Products
                             </span>
                             <div className="absolute inset-0 bg-foreground translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out" />
-                        </button>
+                        </Link>
 
-                        <button className="group relative w-full sm:w-auto px-8 py-3 md:px-10 md:py-4 bg-foreground text-background overflow-hidden transition-all hover:text-foreground border border-foreground">
+                        <Link
+                            href="/blogs"
+                            className="group relative w-full sm:w-auto px-8 py-3 md:px-10 md:py-4 bg-foreground text-background overflow-hidden transition-all hover:text-foreground border border-foreground"
+                        >
                             <span className="relative z-10 text-xs md:text-sm uppercase tracking-widest font-medium whitespace-nowrap">
                                 Read Journals
                             </span>
                             <div className="absolute inset-0 bg-background translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out" />
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </section>

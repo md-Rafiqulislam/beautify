@@ -1,20 +1,22 @@
 import Banner from "@/features/homePage/Banner";
-import EditorChoice from "@/features/homePage/Trendig";
+import Trending from "@/features/homePage/Trendig";
 import Products from "@/features/homePage/Products";
 import Brand from "@/features/homePage/Brand";
 import NewsLatter from "@/features/homePage/NewsLatter";
+import { getProducts } from "@/actions/product.action";
 
-const HomePage = () => {
+const HomePage = async () => {
+    const products = await getProducts();
     return (
         <>
             {/* banner section */}
             <Banner />
 
             {/* products */}
-            <Products />
+            <Products products={products} />
 
             {/* editor choich */}
-            <EditorChoice />
+            <Trending products={products} />
 
             {/* brand */}
             <Brand />
