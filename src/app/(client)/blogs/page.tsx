@@ -1,4 +1,4 @@
-import { TBlogWithId } from "@/types/blog.type";
+
 import Hero from "@/features/blogsPage/Hero";
 import BlogsGrid from "@/features/blogsPage/BlogsGrid";
 import { getBlogs } from "@/actions/blog.action";
