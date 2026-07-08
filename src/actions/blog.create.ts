@@ -2,36 +2,31 @@
 
 
 import { dbConnect } from "@/lib/db-connect-hanlder";
-import { productModel } from "@/models/product.model";
+import { blogModel } from "@/models/blog.model";
+import { TFormState } from "@/types/action.type";
+import { blogValidation } from "@/validations/blog.validation";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { productValidations } from "@/validations/product.validation";
-import { TFormState } from "@/types/action.type";
 
 
-// create product
-export const createProductAction = async (
-    prevState: TFormState,
-    formData: FormData
-): Promise<TFormState> => {
-
+// create blog
+export const createBlogAction = async (prevState: TFormState, formData: FormData): Promise<TFormState> => {
     const title = formData.get("title");
-    const shortDescription = formData.get("shortDescription");
     const description = formData.get("description");
-    const price = formData.get("price")
-    const quantity = formData.get("quantity");
+    const content = formData.get("content");
+    const readTime = formData.get("readTime");
     const picturesInput = formData.get("pictures") as string;
 
     const payload = {
-        title,
-        shortDescription,
-        description,
-        price: price ? Number(price) : 0,
-        quantity: quantity ? Number(quantity) : 0,
-        pictures: picturesInput ? picturesInput.split(",").map((p) => p.trim()) : [],
+        title: typeof title === "string" ? title.trim() : "",
+        description: typeof description === "string" ? description.trim() : "",
+        content: typeof content === "string" ? content : "",
+        readTime: typeof readTime === "string" ? readTime.trim() : "",
+        pictures: picturesInput ? picturesInput.split(",").map((p) => p.trim()).filter(Boolean) : [],
+        isDeleted: false,
     };
 
-    const validatedPayload = await productValidations.createProduct.safeParseAsync({ body: payload });
+    const validatedPayload = await blogValidation.createBlog.safeParseAsync({ body: payload });
 
     if (!validatedPayload.success) {
         const formattedErrors: Record<string, string[]> = {};
@@ -56,17 +51,16 @@ export const createProductAction = async (
 
     try {
         await dbConnect();
+        await blogModel.create(payload);
 
-        await productModel.create(validatedPayload.data.body);
-
-        revalidatePath("/products");
-    } catch (error: any) {
+        revalidatePath("/blogs");
+    } catch (err: any) {
         return {
             ...prevState,
             success: false,
-            message: error.message || "Failed to create product in database.",
+            message: err.message || "An error occurred writing to MongoDB records.",
         };
     }
 
     redirect("/admin");
-}
+};
