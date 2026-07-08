@@ -16,6 +16,8 @@ const EditorProductCard = ({ product }: TProductCardProps) => {
                 <Image
                     src={hasPicture}
                     alt={product.title}
+                    width={500}
+                    height={500}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
 
