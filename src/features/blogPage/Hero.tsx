@@ -12,7 +12,7 @@ const Hero = ({ blog }: TBlogCardProps) => {
                 <BreadCrumb blog={blog} />
 
                 {/* tags */}
-                <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 text-xs font-semibold text-amber-800 tracking-wider uppercase mb-4">
+                <div className="flex flex-wrap items-center justify-center  gap-3 text-xs font-semibold text-amber-800 tracking-wider uppercase my-4">
                     <span className="px-2.5 py-1 bg-amber-100/60 rounded-md border border-amber-200/40 flex items-center gap-1">
                         <Sparkles className="w-3 h-3" /> Insights
                     </span>
@@ -26,12 +26,12 @@ const Hero = ({ blog }: TBlogCardProps) => {
                 </div>
 
                 {/* title */}
-                <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-black text-zinc-900 tracking-tight leading-[1.15] mb-6">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-black text-zinc-900 tracking-tight leading-[1.15] mb-6 text-center">
                     {blog.title}
                 </h1>
 
                 {/* description */}
-                <p className="text-base sm:text-lg md:text-xl text-zinc-600 font-normal leading-relaxed max-w-3xl">
+                <p className="text-base sm:text-lg md:text-xl text-zinc-600 font-normal leading-relaxed max-w-3xl text-center mx-auto">
                     {blog.description}
                 </p>
             </section>

@@ -41,3 +41,7 @@ export type TBlogPageProps = {
 export type TRouteParams = {
     blogId: string;
 }
+
+
+// blog or null
+export type TBlogOrNull = TBlogWithId | null;

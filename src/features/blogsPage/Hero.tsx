@@ -1,34 +1,8 @@
 "use client";
 
-import React from "react";
-import { Search, Sparkles, Code2, Palette, Cpu, Terminal } from "lucide-react";
+import { Search, Sparkles } from "lucide-react";
 
-type Category = {
-    id: string;
-    label: string;
-    icon: React.ComponentType<{ className?: string }>;
-};
-
-const CATEGORIES: Category[] = [
-    { id: "all", label: "All Articles", icon: Terminal },
-    { id: "code", label: "Engineering", icon: Code2 },
-    { id: "design", label: "UI/UX Design", icon: Palette },
-    { id: "tech", label: "Future Tech", icon: Cpu },
-];
-
-interface HeroProps {
-    searchQuery: string;
-    setSearchQuery: (query: string) => void;
-    activeCategory: string;
-    setActiveCategory: (id: string) => void;
-}
-
-const Hero = ({
-    searchQuery,
-    setSearchQuery,
-    activeCategory,
-    setActiveCategory,
-}: HeroProps) => {
+const Hero = () => {
     return (
         <header className="relative overflow-hidden bg-linear-to-b from-amber-50 to-cyan-50">
             {/* background effect */}
@@ -67,41 +41,9 @@ const Hero = ({
                         <input
                             type="text"
                             placeholder="Search articles, topics, or keywords..."
-                            value={searchQuery}
-                            onChange={(e) => setSearchQuery(e.target.value)}
                             className="w-full pl-12 pr-4 py-3.5 bg-slate-50 border border-slate-300 rounded-2xl text-sm font-medium text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-4 focus:ring-indigo-600/5 focus:border-indigo-500 focus:bg-white transition-all shadow-sm group-hover:border-slate-300"
                         />
                     </div>
-
-                    {/* filters */}
-                    {/* <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-1">
-                        <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider mr-2 hidden sm:inline">
-                            Topics:
-                        </span>
-                        {CATEGORIES.map((category) => {
-                            const Icon = category.icon;
-                            const isActive = activeCategory === category.id;
-
-                            return (
-                                <button
-                                    key={category.id}
-                                    onClick={() =>
-                                        setActiveCategory(category.id)
-                                    }
-                                    className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-medium rounded-xl border transition-all duration-200 ${
-                                        isActive
-                                            ? "bg-slate-900 border-slate-900 text-white shadow-sm"
-                                            : "bg-white border-slate-200 text-slate-600 hover:border-slate-300 hover:bg-slate-50"
-                                    }`}
-                                >
-                                    <Icon
-                                        className={`size-3.5 ${isActive ? "text-indigo-300" : "text-slate-400"}`}
-                                    />
-                                    {category.label}
-                                </button>
-                            );
-                        })}
-                    </div> */}
                 </div>
             </section>
         </header>

@@ -23,6 +23,7 @@ const BlogPictures = ({ blog }: TBlogCardProps) => {
                         alt={`${blog.title} - View ${activeIndex + 1}`}
                         sizes="(max-w-1024px) 100vw, 1024px"
                         className="object-cover select-none transition-all duration-500 ease-out"
+                        loading="eager"
                     />
 
                     {/* badge */}
