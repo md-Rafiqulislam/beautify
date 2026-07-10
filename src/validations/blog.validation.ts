@@ -47,7 +47,7 @@ const updateBlog = z.object({
 
 
 // blog validations
-export const blogValidation = {
+export const blogValidations = {
     createBlog,
     updateBlog,
 };

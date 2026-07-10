@@ -1,14 +1,20 @@
+import { httpStatus } from "@/httpStatus";
 import { blogModel } from "@/models/blog.model";
+import { blogService } from "@/services/blog.service";
 import { catchAsync } from "@/utils/catch-async-handler";
 import { sendResponse } from "@/utils/send-response-hanlder";
+import { blogValidations } from "@/validations/blog.validation";
 
 
 // create blogs
 const POST = catchAsync(async (req) => {
+
     const body = await req.json();
-    const blog = await blogModel.create(body);
+    const payload = await blogValidations.createBlog.parseAsync({ body: body });
+    const blog = await blogService.createBlog(payload.body);
+
     return sendResponse({
-        status: 201,
+        status: httpStatus.created,
         message: "Blog created successfully.",
         data: blog,
     });
@@ -16,12 +22,12 @@ const POST = catchAsync(async (req) => {
 
 
 // get blogs
-const GET = catchAsync(async (req) => {
+const GET = catchAsync(async (_req) => {
 
     const blogs = await blogModel.find();
 
     return sendResponse({
-        status: 200,
+        status: httpStatus.ok,
         message: "Blogs retrived successfully.",
         data: blogs,
     });

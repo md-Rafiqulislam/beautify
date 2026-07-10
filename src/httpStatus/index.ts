@@ -1,0 +1,30 @@
+// http status
+export const httpStatus = {
+    ok: 200,
+    created: 201,
+    accepted: 202,
+    noContent: 204,
+
+    movedPermanently: 301,
+    found: 302,
+    notModified: 304,
+
+    badRequest: 400,
+    unauthorized: 401,
+    forbidden: 403,
+    notFound: 404,
+    methodNotAllowed: 405,
+    conflict: 409,
+    gone: 410,
+    unprocessableEntity: 422,
+    tooManyRequests: 429,
+
+    internalServerError: 500,
+    notImplemented: 501,
+    badGateway: 502,
+    serviceUnavailable: 503,
+} as const;
+
+
+// http status code type
+export type THttpStatus = typeof httpStatus[keyof typeof httpStatus];
