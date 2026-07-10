@@ -3,17 +3,19 @@ import { productModel } from "@/models/product.model";
 import { sendResponse } from "../../../utils/send-response-hanlder";
 import { catchAsync } from "@/utils/catch-async-handler";
 import { productValidations } from "@/validations/product.validation";
+import { productService } from "@/services/product.service";
+import { httpStatus } from "@/httpStatus";
 
 
 // create product
 const POST = catchAsync(async (req) => {
     const body = await req.json();
-    const validatedData = await productValidations.createProduct.parseAsync(body);
+    const payload = await productValidations.createProduct.parseAsync({body});
 
-    const product = await productModel.create(validatedData);
+    const product = await productService.createProduct(payload.body);
 
     return sendResponse({
-        status: 201,
+        status: httpStatus.created,
         message: "Product created successfully.",
         data: product,
     });
@@ -22,9 +24,10 @@ const POST = catchAsync(async (req) => {
 
 // get products
 const GET = catchAsync(async (_req) => {
-    const products = await productModel.find();
+    const products = await productService.getProducts();
+
     return sendResponse({
-        status: 200,
+        status: httpStatus.ok,
         message: "Products retrived successfully.",
         data: products,
     });

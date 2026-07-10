@@ -1,4 +1,6 @@
+import { httpStatus } from "@/httpStatus";
 import { productModel } from "@/models/product.model";
+import { productService } from "@/services/product.service";
 import { TRouteParams } from "@/types/product.type";
 import { catchAsync } from "@/utils/catch-async-handler";
 import { sendResponse } from "@/utils/send-response-hanlder";
@@ -7,9 +9,10 @@ import { sendResponse } from "@/utils/send-response-hanlder";
 // get product
 const GET = catchAsync<TRouteParams>(async (_req, ctx) => {
     const { productId } = await ctx.params;
-    const product = await productModel.findById(productId);
+    const product = await productService.getProduct(productId);
+
     return sendResponse({
-        status: 200,
+        status: httpStatus.ok,
         message: "Product retrived successfully.",
         data: product
     });
@@ -20,9 +23,11 @@ const GET = catchAsync<TRouteParams>(async (_req, ctx) => {
 const PATCH = catchAsync<TRouteParams>(async (req, ctx) => {
     const { productId } = await ctx.params;
     const body = await req.json();
-    const product = await productModel.findByIdAndUpdate(productId, { ...body }, { new: true, runValidators: true });
+
+    const product = await productService.updateProduct(productId, body);
+
     return sendResponse({
-        status: 200,
+        status: httpStatus.ok,
         message: "Product updated successfully.",
         data: product
     });
@@ -32,9 +37,11 @@ const PATCH = catchAsync<TRouteParams>(async (req, ctx) => {
 // delete product
 const DELETE = catchAsync<TRouteParams>(async (_req, ctx) => {
     const { productId } = await ctx.params;
-    const product = await productModel.findByIdAndUpdate(productId, { isDeleted: true }, { new: true, runValidators: true });
+
+    const product = await productService.updateProduct(productId, {isDeleted: true});
+    
     return sendResponse({
-        status: 200,
+        status: httpStatus.ok,
         message: "Product deleted successfully.",
         data: product
     });
