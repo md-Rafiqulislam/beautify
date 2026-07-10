@@ -1,7 +1,6 @@
 import { TBlogCardProps } from "@/types/blog.type";
 import { formatDate } from "@/utils/format-date-handler";
-import { Calendar, ChevronRight, Clock, Sparkles } from "lucide-react";
-import Link from "next/link";
+import { Calendar, Clock, Sparkles } from "lucide-react";
 import BreadCrumb from "./BreadCrumb";
 
 const Hero = ({ blog }: TBlogCardProps) => {

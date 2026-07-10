@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const BlogCard = ({ blog }: TBlogCardProps) => {
+    const hasPicture = blog?.pictures ? blog?.pictures[0] : "/pic.jpg";
 
     return (
         <article className="group flex flex-col bg-slate-50 border overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
@@ -14,7 +15,7 @@ const BlogCard = ({ blog }: TBlogCardProps) => {
                     <Image
                         width={500}
                         height={500}
-                        src={blog.pictures[0]}
+                        src={hasPicture}
                         alt={blog.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />

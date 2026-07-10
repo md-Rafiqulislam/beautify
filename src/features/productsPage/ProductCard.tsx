@@ -1,19 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import { TProductCardProps } from "@/types/product.type";
+import CartButton from "@/components/CartButton";
 
 const ProductCard = ({ product }: TProductCardProps) => {
     const isOutOfStock = product.quantity === 0;
+    const hasPicture = product?.pictures ? product?.pictures[0] : "/pic.jpg";
+    const serializedProduct = JSON.parse(JSON.stringify(product));
 
     return (
         <article className="group relative flex h-full flex-col overflow-hidden rounded-tl-4xl rounded-br-4xl bg-slate-100 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gray-500/50 ease-in-out">
             {/* picture */}
             <div className="relative aspect-video w-full overflow-hidden">
                 <Image
-                    src={
-                        product?.pictures?.[0] ||
-                        "https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800&q=80"
-                    }
+                    src={hasPicture}
                     alt={product.title}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -60,8 +60,8 @@ const ProductCard = ({ product }: TProductCardProps) => {
                     </Link>
 
                     {/* add to cart button */}
-                    <button
-                        disabled={isOutOfStock}
+                    <CartButton
+                        product={serializedProduct}
                         className={`group/btn relative flex flex-1 items-center justify-center overflow-hidden rounded-2xl py-3.5 text-sm font-bold transition-all duration-300 active:scale-[0.95] ${
                             isOutOfStock
                                 ? "bg-gray-100 text-gray-400"
@@ -88,7 +88,7 @@ const ProductCard = ({ product }: TProductCardProps) => {
                                 </svg>
                             )}
                         </span>
-                    </button>
+                    </CartButton>
                 </div>
             </div>
         </article>

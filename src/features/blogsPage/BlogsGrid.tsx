@@ -1,5 +1,6 @@
 import { TBlogsGridProps, TBlogWithId } from "@/types/blog.type";
 import BlogCard from "./BlogCard";
+
 const BlogsGrid = ({ blogs }: TBlogsGridProps) => {
     return (
         <section className="w-full h-full py-16 bg-linear-to-b from-sky-100 via-indigo-100 to-cyan-100">

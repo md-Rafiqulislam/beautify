@@ -16,10 +16,10 @@ const Banner = () => {
                             The Conscious Collection
                         </h1>
                     </div>
-                    <p className="text-sm font-light text-neutral-700 max-w-lg leading-relaxed mt-4">
-                        High-performance formulas engineered cleanly, designed
-                        intentionally to accentuate your natural, organic skin
-                        health.
+                    <p className="font-light text-neutral-700 max-w-2xl leading-relaxed mt-4 text-lg">
+                        Our signature marketplace of high-performance, non-toxic
+                        beauty products—handpicked to simplify your routine and
+                        enhance your natural skin health.
                     </p>
                 </div>
             </section>

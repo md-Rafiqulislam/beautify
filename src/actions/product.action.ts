@@ -9,7 +9,7 @@ import { productModel } from "@/models/product.model";
 export const getProducts = async () => {
     try {
         await dbConnect();
-        const products = await productModel.find();
+        const products = await productModel.find().lean();
         return products;
     } catch (error) {
         return [];
@@ -21,7 +21,7 @@ export const getProducts = async () => {
 export const getProduct = async (productId: string) => {
     try {
         await dbConnect();
-        const product = await productModel.findById(productId);
+        const product = await productModel.findById(productId).lean();
         return product;
     } catch (error) {
         return null;

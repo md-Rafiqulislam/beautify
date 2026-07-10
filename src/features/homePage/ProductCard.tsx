@@ -1,12 +1,13 @@
+import CartButton from "@/components/CartButton";
 import { TProductCardProps } from "@/types/product.type";
 import Link from "next/link";
 
 const ProductCard = ({ product }: TProductCardProps) => {
     const hasPicture = product?.pictures ? product.pictures[0] : "/pic.jpg";
+    const serializedProduct = JSON.parse(JSON.stringify(product));
+
     return (
-        <article
-            className="group relative h-125 overflow-hidden bg-gray-100"
-        >
+        <article className="group relative h-125 overflow-hidden bg-gray-100">
             {/* picture */}
             <img
                 src={hasPicture}
@@ -29,15 +30,16 @@ const ProductCard = ({ product }: TProductCardProps) => {
 
             {/* actions */}
             <div className="absolute bottom-8 left-8 flex gap-3 opacity-0 translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
-                <button
-                    // onClick={() => console.log("Added to cart")}
+                {/* client cart button */}
+                <CartButton
+                    product={serializedProduct}
                     className="px-4 py-2 bg-slate-100 cursor-pointer text-slate-900 text-sm font-semibold rounded-sm hover:bg-purple-300 transition-colors"
                 >
                     Add to Cart
-                </button>
+                </CartButton>
                 <Link
                     href={`/products/${product._id}`}
-                    className="px-4 py-2 bg-transparent border border-white text-white text-sm font-semibold rounded-sm hover:bg-white hover:text-slate-900 transition-colors"
+                    className="px-4 py-2 bg-transparent border border-slate-200 text-slate-50 text-sm font-semibold rounded-sm hover:bg-slate-100 hover:text-slate-900 transition-colors"
                 >
                     Details
                 </Link>

@@ -1,9 +1,12 @@
+import CartButton from "@/components/CartButton";
 import { TProductCardProps } from "@/types/product.type";
 import Image from "next/image";
 import Link from "next/link";
 
 const EditorProductCard = ({ product }: TProductCardProps) => {
     const hasPicture = product?.pictures ? product.pictures[0] : "/pic.jpg";
+    const serializedProduct = JSON.parse(JSON.stringify(product));
+
     return (
         <article className="group flex flex-col h-full">
             {/* picture */}
@@ -24,9 +27,12 @@ const EditorProductCard = ({ product }: TProductCardProps) => {
                 {/* actions */}
                 <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-0 md:translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out bg-linear-to-t from-black/20 to-transparent md:bg-none">
                     <div className="flex flex-col gap-2">
-                        <button className="w-full bg-black/90 backdrop-blur-sm text-white py-3.5 text-xs uppercase tracking-widest hover:bg-black transition">
+                        <CartButton
+                            className="w-full bg-black/90 backdrop-blur-sm text-white py-3.5 text-xs uppercase tracking-widest hover:bg-black transition"
+                            product={serializedProduct}
+                        >
                             Quick Add
-                        </button>
+                        </CartButton>
                         <Link
                             href={`/products/${product._id}`}
                             className="w-full bg-slate-100/80 backdrop-blur-sm text-slate-950 py-3.5 text-xs uppercase tracking-widest text-center hover:bg-slate-50 transition border border-slate-950/10"

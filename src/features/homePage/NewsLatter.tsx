@@ -4,7 +4,7 @@ const NewsLatter = () => {
     return (
         <section className="py-32 bg-linear-to-b from-background to-sky-100 text-center px-4">
             <div className="max-w-xl mx-auto">
-                <h2 className="text-3xl font-serif mb-4">Enjoy 15% Off</h2>
+                <h2 className="text-3xl font-serif mb-4">Enjoy Latest Products</h2>
                 <p className="text-gray-500 font-light mb-12">
                     Subscribe to our newsletter to receive your welcome
                     discount, early access to launches, and skincare advice.

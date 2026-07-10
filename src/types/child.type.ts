@@ -5,3 +5,9 @@ import { ReactNode } from "react"
 export type TChildren = {
     children: ReactNode;
 };
+
+
+// children with className
+export type TChildWithClassName = TChildren & {
+    className: string;
+}

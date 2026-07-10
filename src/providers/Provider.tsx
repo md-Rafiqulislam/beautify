@@ -1,7 +1,13 @@
 import { TChildren } from "@/types/child.type";
+import ClientWrapper from "./ClientWrapper";
+import CartProvider from "./CartProvider";
 
 const Provider = ({ children }: TChildren) => {
-    return <>{children}</>;
+    return (
+        <ClientWrapper>
+            <CartProvider>{children}</CartProvider>
+        </ClientWrapper>
+    );
 };
 
 export default Provider;

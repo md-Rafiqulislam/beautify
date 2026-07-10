@@ -20,17 +20,18 @@ const Hero = () => {
 
                 {/* content */}
                 <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-950 max-w-3xl leading-[1.1] sm:leading-[1.05]">
-                    Perspectives on{" "}
+                    Discover elite{" "}
                     <span className="text-transparent bg-clip-text bg-linear-to-r from-indigo-600 to-violet-500">
-                        code
+                        cosmetics
                     </span>
-                    , design, and tech.
+                    , skincare, and wellness.
                 </h1>
 
                 <p className="mt-5 text-base sm:text-lg text-slate-500 max-w-2xl font-normal leading-relaxed">
-                    Thoughtful articles, deep-dive architectural reviews, and
-                    practical modern tutorials written by developers, for
-                    developers.
+                    Skip the filler. We scout the globe to stock only the most
+                    potent, clinical-grade formulas and top-tier beauty
+                    brands—bringing high-performance results straight to your
+                    vanity.
                 </p>
 
                 {/* search */}

@@ -11,15 +11,17 @@ const Brand = () => {
                     Beauty that cares for your skin and the confidence.
                 </h2>
                 <p className="text-gray-600 mb-10 leading-relaxed font-light text-lg">
-                    Every formula is meticulously crafted in our botanical labs.
-                    We strip away the unnecessary fillers, leaving only potent,
-                    clinical-grade ingredients that deliver undeniable results.
+                    We meticulously scout and curate the world’s finest
+                    formulas, doing the hard work of filtering out unnecessary
+                    fillers for you. What’s left is a premium collection of
+                    potent, clinical-grade products that deliver undeniable
+                    results.
                 </p>
                 <Link
-                    href="#"
+                    href="/products"
                     className="inline-flex items-center gap-4 text-sm uppercase tracking-widest font-medium border-b border-black pb-1 self-start hover:text-gray-500 hover:border-gray-500 transition"
                 >
-                    Discover Our Ingredients
+                    Discover Our Products
                     <svg
                         className="w-4 h-4"
                         fill="none"
