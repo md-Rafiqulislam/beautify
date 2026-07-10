@@ -48,7 +48,6 @@ next-env.d.ts
 src/services/auth.service.ts
 src/utils/auth-handler.ts
 src/utils/picture-handler.ts
-src/lib/seed-user.ts
 src/validations/auth.validation.ts
 src/app/api/auths/
 src/auths/
