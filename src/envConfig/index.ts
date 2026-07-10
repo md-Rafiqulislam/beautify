@@ -12,4 +12,9 @@ export const config = {
     nodeEnv: process.env.NODE_ENV as string,
     nodeEnv1: process.env.NODE_ENV1 as string,
     nodeEnv2: process.env.NODE_ENV2 as string,
+    cldnry: {
+        title: process.env.CLOUDINARY_CLOUD_NAME as string,
+        key: process.env.CLOUDINARY_API_KEY as string,
+        secret: process.env.CLOUDINARY_API_SECRET as string,
+    },
 }

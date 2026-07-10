@@ -43,3 +43,18 @@ next-env.d.ts
 
 # files
 .gitignore
+
+# files
+src/services/
+src/utils/auth-handler.ts
+src/utils/picture-handler.ts
+src/lib/seed-user.ts
+src/lib/validate-request.ts
+src/models/user.model.ts
+src/validations/auth.validation.ts
+src/app/api/auths/
+src/auths/
+src/types/auth.type.ts
+src/types/order.type.ts
+src/types/user.type.ts
+
