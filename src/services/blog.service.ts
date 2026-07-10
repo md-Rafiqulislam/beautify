@@ -19,7 +19,7 @@ class BlogService {
     }
 
     // get blog
-    public async getBlogById(id: string) {
+    public async getBlog(id: string) {
         const result = await blogModel.findById(id).lean();
         return result;
     }
