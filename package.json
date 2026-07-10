@@ -8,7 +8,7 @@
         "start": "next start",
         "lint": "biome check",
         "format": "biome format --write",
-        "db:seed": "tsx src/lib/seed-user.ts"
+        "seed:db": "tsx src/lib/seed-user.ts"
     },
     "dependencies": {
         "class-variance-authority": "^0.7.1",
@@ -33,6 +33,7 @@
         "@types/react-dom": "^19",
         "babel-plugin-react-compiler": "1.0.0",
         "tailwindcss": "^4",
+        "tsx": "^4.23.0",
         "typescript": "^5"
     }
 }

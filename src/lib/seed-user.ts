@@ -1,6 +1,7 @@
 import { userModel } from "@/models/user.model";
 import { dbConnect } from "./db-connect-hanlder";
 import { EUserRole } from "@/types/user.type";
+import mongoose from "mongoose";
 
 
 // seed admin
@@ -36,3 +37,17 @@ export const seedUser = async () => {
         throw error;
     }
 };
+
+// call it
+const run = async () => {
+    try {
+        await seedUser();
+        process.exit(0);
+    } catch (err) {
+        process.exit(1);
+    } finally {
+        await mongoose.disconnect();
+    }
+};
+
+run();

@@ -53,4 +53,6 @@ src/app/api/auths/
 src/auths/
 src/types/auth.type.ts
 src/types/order.type.ts
+src/services/order.service.ts
+src/models/order.model.ts
 
