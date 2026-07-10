@@ -50,10 +50,18 @@ const journalsPage: Metadata = {
 };
 
 
+// about page
+const aboutPage: Metadata = {
+    title: "About | Our Curation Philosophy",
+    description:
+        "Step behind the glass. Explore our exhaustive global sourcing standards, independent testing frameworks, and our unyielding commitment to clean skin science.",
+};
+
 // metadatas
 export const metadatas = {
     rootLayout,
     homePage,
     productsPage,
     journalsPage,
+    aboutPage,
 };

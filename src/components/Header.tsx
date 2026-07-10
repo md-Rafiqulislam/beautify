@@ -29,6 +29,12 @@ const Header = () => {
                     >
                         Journals
                     </Link>
+                    <Link
+                        className="hover:text-foreground transition-colors"
+                        href="/about"
+                    >
+                        About
+                    </Link>
                 </nav>
             </section>
         </header>
