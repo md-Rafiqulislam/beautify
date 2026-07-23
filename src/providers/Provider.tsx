@@ -1,11 +1,13 @@
 import { TChildren } from "@/types/child.type";
 import ClientWrapper from "./ClientWrapper";
-import CartProvider from "./CartProvider";
+import { CartProvider } from "@/components/CartContext";
 
 const Provider = ({ children }: TChildren) => {
     return (
         <ClientWrapper>
-            <CartProvider>{children}</CartProvider>
+            <CartProvider>
+                {children}
+            </CartProvider>
         </ClientWrapper>
     );
 };

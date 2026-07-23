@@ -6,6 +6,7 @@ const ProductCard = ({ product }: TProductCardProps) => {
     const hasPicture = product?.pictures ? product.pictures[0] : "/pic.jpg";
     const serializedProduct = JSON.parse(JSON.stringify(product));
 
+
     return (
         <article className="group relative h-125 overflow-hidden bg-gray-100">
             {/* picture */}

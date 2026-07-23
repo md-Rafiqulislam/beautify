@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Brand = () => {
     return (
-        <section className="py-0 flex flex-col lg:flex-row bg-sky-100">
+        <section className="py-0 flex flex-col lg:flex-row bg-sky-100 h-dvh overflow-hidden">
             <div className="w-full lg:w-1/2 p-12 lg:p-24 flex flex-col justify-center">
                 <span className="text-xs uppercase tracking-[0.2em] text-gray-500 mb-6">
                     Our Philosophy

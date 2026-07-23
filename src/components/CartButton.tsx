@@ -1,11 +1,21 @@
 "use client";
 
 import { TCartButton } from "@/types/cart.type";
+import { useCart } from "./CartContext";
 
 const CartButton = ({ children, className, product }: TCartButton) => {
+
+    const { addToCart } = useCart();
+
     const handleAddToCart = () => {
-        console.log("This product added to cart.", product);
+        addToCart({
+            id: product._id,
+            name: product.title,
+            price: product.price,
+            image: product?.pictures[0]!,
+        });
     };
+
 
     return (
         <button onClick={handleAddToCart} className={className}>
